@@ -1,272 +1,103 @@
-⛽ KAIQZIN DEV — Calculadora de Combustível
+# ⛽ KAIQZIN DEV — FuelCalc
 
-Uma calculadora de combustível simples, moderna e responsiva para calcular litros a partir de um valor em reais ou o valor total a partir da quantidade de litros.
+<div align="center">
 
-O projeto possui seleção de Gasolina, Etanol e Diesel S-10, preenchendo automaticamente o preço por litro ao selecionar o combustível.
+# 🚗 FuelCalc
 
-🚀 Funcionalidades
+### Sua parada rápida para calcular combustível.
 
-⛽ Seleção de Gasolina
+**Gasolina • Etanol • Diesel**
 
-🌱 Seleção de Etanol
+<br>
 
-🚛 Seleção de Diesel S-10
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
 
-💵 Preenchimento automático do preço por litro
+</div>
 
-💰 Cálculo de litros através do valor em reais
+---
 
-🛢️ Cálculo do valor através da quantidade de litros
+## 🚦 Sobre o projeto
 
-🧹 Botão para limpar os campos
+O **FuelCalc** é uma calculadora de combustível desenvolvida pelo **KAIQZIN DEV**.
 
-📱 Interface responsiva para celular e computador
+A aplicação foi criada para facilitar cálculos rápidos de abastecimento.
 
-🎨 Interface moderna com identidade visual KAIQZIN DEV
+Com ela você pode descobrir:
 
-⚡ Cálculos realizados instantaneamente no navegador
+> 💰 Com R$ 100, quantos litros consigo abastecer?
 
-🖥️ Preview
+ou:
 
-A aplicação possui três opções de combustível:
+> 🛢️ Com 20 litros, quanto vou pagar?
 
-┌─────────────────┐
-│       ⛽        │
-│    Gasolina     │
-│    R$ 6,53/L    │
-└─────────────────┘
+A aplicação permite selecionar o combustível e preencher automaticamente o preço por litro.
 
-┌─────────────────┐
-│       🌱        │
-│     Etanol      │
-│    R$ 4,04/L    │
-└─────────────────┘
+---
 
-┌─────────────────┐
-│       🚛        │
-│   Diesel S-10   │
-│    R$ 6,97/L    │
-└─────────────────┘
+## ⛽ Combustíveis
 
+| Combustível | Preço |
+|:---:|:---:|
+| ⛽ Gasolina | R$ 6,53/L |
+| 🌱 Etanol | R$ 4,04/L |
+| 🚛 Diesel S-10 | R$ 6,97/L |
 
-Ao clicar em um combustível, o preço por litro é preenchido automaticamente.
+> ⚠️ Os preços são valores de exemplo e podem ser alterados no código.
 
-🧮 Exemplos
-Valor em reais → Litros
+---
 
-Se a gasolina estiver custando:
+## ⚡ Funcionalidades
 
-R$ 6,53/L
+- ⛽ Seleção de Gasolina
+- 🌱 Seleção de Etanol
+- 🚛 Seleção de Diesel S-10
+- 💵 Preenchimento automático do preço por litro
+- 💰 Cálculo de litros através do valor em reais
+- 🛢️ Cálculo do valor através da quantidade de litros
+- 🧹 Botão para limpar os campos
+- 🎯 Destaque do combustível selecionado
+- 📱 Interface responsiva
+- 🎨 Design moderno
+- ⚡ Cálculos instantâneos
 
+---
 
-E você informar:
+## 🧮 Como funciona
 
-R$ 100,00
-
-
-O sistema calcula aproximadamente:
-
-15,31 litros
-
-Litros → Valor
-
-Se você informar:
-
-20 litros
-
-
-Com o preço:
-
-R$ 6,53/L
-
-
-O resultado será:
-
-R$ 130,60
-
-📁 Estrutura do projeto
-calculadora-combustivel/
-│
-├── index.html
-├── style.css
-├── calculadora.cpp
-└── README.md
-
-index.html
-
-Responsável pela estrutura da página, campos, botões e interação com o usuário.
-
-style.css
-
-Responsável pelo visual da aplicação, incluindo cores, layout, responsividade e identidade visual.
-
-calculadora.cpp
-
-Contém uma versão dos cálculos desenvolvida em C++ para estudo da lógica de programação.
-
-README.md
-
-Documentação do projeto.
-
-🛠️ Tecnologias utilizadas
-
-HTML5
-
-CSS3
-
-JavaScript
-
-C++
-
-📌 Como executar
-1. Clone o projeto
-git clone SEU_LINK_DO_REPOSITORIO
-
-2. Entre na pasta
-cd calculadora-combustivel
-
-3. Abra o projeto
-
-Abra o arquivo:
-
-index.html
-
-
-Você pode abrir diretamente no navegador ou utilizar uma extensão como Live Server no VS Code.
-
-💻 C++
-
-O arquivo calculadora.cpp é uma implementação separada da lógica da calculadora em C++.
-
-Para compilar utilizando o g++:
-
-g++ calculadora.cpp -o calculadora
-
-
-Depois execute:
-
-Windows
-calculadora.exe
-
-Linux / macOS
-./calculadora
-
-🎨 Identidade visual
-
-O projeto utiliza a marca:
-
-KAIQZIN DEV
-
-
-Com uma identidade baseada em:
-
-🟢 Verde
-
-⚫ Fundo escuro
-
-💻 Elementos relacionados à programação
-
-⛽ Tema automotivo
-
-📱 Design responsivo
-
-🔧 Personalizando os preços
-
-Os preços podem ser alterados diretamente no index.html.
+### 💰 Reais → Litros
 
 Exemplo:
 
-<button
-    class="combustivel"
-    onclick="selecionarCombustivel(this, '6.53')"
->
+**Preço:** R$ 6,53/L  
+**Valor:** R$ 100,00
+
+```text
+100 ÷ 6,53 = 15,31 litros
+⛽ Você pode abastecer aproximadamente:
+╔══════════════════════════════════════╗
+║                                      ║
+║          </> KAIQZIN DEV             ║
+║                                      ║
+║      ⛽ CALCULADORA DE COMBUSTÍVEL   ║
+║                                      ║
+║   ┌────────┐ ┌────────┐ ┌────────┐  ║
+║   │   ⛽   │ │   🌱   │ │   🚛   │  ║
+║   │ Gasol. │ │ Etanol │ │ Diesel │  ║
+║   └────────┘ └────────┘ └────────┘  ║
+║                                      ║
+║   💵 Preço por litro                 ║
+║   ┌──────────────────────────────┐   ║
+║   │ 6.53                         │   ║
+║   └──────────────────────────────┘   ║
+║                                      ║
+║          [ CALCULAR ]                ║
+║                                      ║
+╚══════════════════════════════════════╝
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          KAIQZIN DEV © 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
-Para alterar o preço da gasolina para R$ 6,80:
-
-<button
-    class="combustivel"
-    onclick="selecionarCombustivel(this, '6.80')"
->
-
-
-Também altere o valor exibido:
-
-<strong>R$ 6,80/L</strong>
-
-📱 Responsividade
-
-A calculadora foi desenvolvida para funcionar em diferentes tamanhos de tela:
-
-💻 Computador
-📱 Celular
-📲 Tablet
-
-
-O layout se adapta automaticamente através de CSS Media Queries.
-
-🔮 Melhorias futuras
-
-Algumas funcionalidades que podem ser adicionadas posteriormente:
-
- Atualização automática dos preços
-
- Histórico de abastecimentos
-
- Comparação entre combustíveis
-
- Cálculo de consumo do veículo
-
- Cálculo de custo por km
-
- Cálculo de autonomia
-
- Seleção de estado/cidade
-
- Tema claro/escuro
-
- Gráficos de preços
-
- Integração com uma API
-
- Backend em C++
-
- Banco de dados
-
-📚 Objetivo
-
-Este projeto foi desenvolvido como uma aplicação prática para estudar e praticar:
-
-HTML
-CSS
-JavaScript
-C++
-Lógica de programação
-Desenvolvimento Web
-Design responsivo
-
-👨‍💻 Desenvolvedor
-KAIQZIN DEV
-
-Projeto desenvolvido para fins de estudo e desenvolvimento web.
-
-⭐ Contribuição
-
-Se você gostou do projeto, considere deixar uma ⭐ no repositório.
-
-Sugestões e melhorias são bem-vindas!
-
-📄 Licença
-
-Este projeto pode ser utilizado para fins de estudo e aprendizado.
-
-<div align="center">
-⛽ KAIQZIN DEV
-
-Calculadora de Combustível
-
-Desenvolvido com 💚 e código.
-
-</div> ``` :::
-
-Você pode salvar esse conteúdo diretamente como README.md na raiz do projeto.
