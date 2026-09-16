@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KAIQZIN DEV - Calculadora</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- LOGO -->
+        <div class="logo">
+            <div class="logo-icon">&lt;/&gt;</div>
+
+            <div class="logo-text">
+                <strong>KAIQZIN</strong>
+                <span>DEV</span>
+            </div>
+        </div>
+
+
+        <!-- TÍTULO -->
+        <header>
+            <h1>⛽ Calculadora de Combustível</h1>
+            <p>Calcule litros e valores de combustível</p>
+        </header>
+
+
+        <section class="card">
+
+            <h2>Escolha o combustível</h2>
+
+
+            <!-- COMBUSTÍVEIS -->
+            <div class="combustiveis">
+
+                <button
+                    type="button"
+                    class="combustivel ativo"
+                    onclick="selecionarCombustivel(this, '6.53')"
+                >
+                    <div class="icone">⛽</div>
+                    <span>Gasolina</span>
+                    <strong>R$ 6,53/L</strong>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="combustivel"
+                    onclick="selecionarCombustivel(this, '4.04')"
+                >
+                    <div class="icone">🌱</div>
+                    <span>Etanol</span>
+                    <strong>R$ 4,04/L</strong>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="combustivel"
+                    onclick="selecionarCombustivel(this, '6.97')"
+                >
+                    <div class="icone">🚛</div>
+                    <span>Diesel S-10</span>
+                    <strong>R$ 6,97/L</strong>
+                </button>
+
+            </div>
+
+
+            <!-- PREÇO -->
+            <div class="campo">
+
+                <label for="preco">
+                    💵 Preço por litro
+                </label>
+
+                <input
+                    type="number"
+                    id="preco"
+                    value="6.53"
+                    step="0.01"
+                >
+
+            </div>
+
+
+            <!-- VALOR EM REAIS -->
+            <div class="campo">
+
+                <label for="valor">
+                    💰 Quanto você quer gastar?
+                </label>
+
+                <input
+                    type="number"
+                    id="valor"
+                    placeholder="Ex: 100"
+                    min="0"
+                    step="0.01"
+                >
+
+            </div>
+
+
+            <!-- LITROS -->
+            <div class="campo">
+
+                <label for="litros">
+                    🛢️ Quantos litros?
+                </label>
+
+                <input
+                    type="number"
+                    id="litros"
+                    placeholder="Ex: 20"
+                    min="0"
+                    step="0.01"
+                >
+
+            </div>
+
+
+            <!-- BOTÕES -->
+            <div class="botoes">
+
+                <button
+                    type="button"
+                    class="calcular"
+                    onclick="calcular()"
+                >
+                    Calcular
+                </button>
+
+
+                <button
+                    type="button"
+                    class="limpar"
+                    onclick="limpar()"
+                >
+                    Limpar
+                </button>
+
+            </div>
+
+
+            <!-- RESULTADO -->
+            <div
+                class="resultado"
+                id="resultado"
+            >
+
+                <h2>Resultado</h2>
+
+                <div
+                    class="resultado-numero"
+                    id="resultadoNumero"
+                >
+                    0,00
+                </div>
+
+                <p id="descricao">
+                    Resultado
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            © 2026 KAIQZIN DEV
+        </footer>
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        // ==========================================
+        // SELECIONAR COMBUSTÍVEL
+        // ==========================================
+
+        function selecionarCombustivel(botao, preco) {
+
+            // Pega todos os botões
+            const botoes =
+                document.querySelectorAll(".combustivel");
+
+
+            // Remove o destaque de todos
+            botoes.forEach(function(item) {
+
+                item.classList.remove("ativo");
+
+            });
+
+
+            // Destaca o botão clicado
+            botao.classList.add("ativo");
+
+
+            // Coloca o preço automaticamente
+            document.getElementById("preco").value = preco;
+
+        }
+
+
+        // ==========================================
+        // CALCULAR
+        // ==========================================
+
+        function calcular() {
+
+            // Pega os valores
+            const preco =
+                parseFloat(
+                    document.getElementById("preco").value
+                );
+
+            const valor =
+                parseFloat(
+                    document.getElementById("valor").value
+                );
+
+            const litros =
+                parseFloat(
+                    document.getElementById("litros").value
+                );
+
+
+            // Verifica se o preço é válido
+            if (isNaN(preco) || preco <= 0) {
+
+                alert("Digite um preço válido por litro.");
+
+                return;
+            }
+
+
+            // Pega a área de resultado
+            const resultado =
+                document.getElementById("resultado");
+
+            const resultadoNumero =
+                document.getElementById("resultadoNumero");
+
+            const descricao =
+                document.getElementById("descricao");
+
+
+            // ======================================
+            // SE DIGITOU VALOR EM REAIS
+            // ======================================
+
+            if (!isNaN(valor) && valor > 0) {
+
+                const litrosCalculados =
+                    valor / preco;
+
+
+                resultadoNumero.innerText =
+                    litrosCalculados
+                        .toFixed(2)
+                        .replace(".", ",");
+
+
+                descricao.innerText =
+                    "litros";
+
+
+                resultado.classList.add("mostrar");
+
+                return;
+            }
+
+
+            // ======================================
+            // SE DIGITOU LITROS
+            // ======================================
+
+            if (!isNaN(litros) && litros > 0) {
+
+                const valorCalculado =
+                    litros * preco;
+
+
+                resultadoNumero.innerText =
+                    "R$ " +
+                    valorCalculado
+                        .toFixed(2)
+                        .replace(".", ",");
+
+
+                descricao.innerText =
+                    "valor total";
+
+
+                resultado.classList.add("mostrar");
+
+                return;
+            }
+
+
+            // ======================================
+            // NADA DIGITADO
+            // ======================================
+
+            alert(
+                "Digite quanto você quer gastar ou quantos litros deseja."
+            );
+
+        }
+
+
+        // ==========================================
+        // LIMPAR
+        // ==========================================
+
+        function limpar() {
+
+            // Limpa os campos
+            document.getElementById("valor").value = "";
+
+            document.getElementById("litros").value = "";
+
+
+            // Esconde o resultado
+            document
+                .getElementById("resultado")
+                .classList.remove("mostrar");
+
+
+            // Volta para gasolina
+            const botoes =
+                document.querySelectorAll(".combustivel");
+
+
+            botoes.forEach(function(botao) {
+
+                botao.classList.remove("ativo");
+
+            });
+
+
+            // Seleciona gasolina novamente
+            botoes[0].classList.add("ativo");
+
+
+            // Coloca o preço da gasolina
+            document.getElementById("preco").value = "6.53";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
